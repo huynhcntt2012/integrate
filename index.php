@@ -1,4 +1,5 @@
 <?php include 'config.php'; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +9,8 @@
 </head>
 <body>
     <div class="container">
-        <!-- Menu ngang hiển thị danh sách các bảng -->
-        <div class="topbar">
+        <!-- Sidebar menu trái hiển thị danh sách các bảng -->
+        <div class="sidebar">
             <h2>Danh sách bảng</h2>
             <ul class="menu">
                 <?php
@@ -66,7 +67,7 @@
                     echo "Bảng không có dữ liệu.";
                 }
             } else {
-                echo "<p>Vui lòng chọn một bảng từ menu bên trên để xem chi tiết.</p>";
+                echo "<p>Vui lòng chọn một bảng từ menu bên trái để xem chi tiết.</p>";
             }
             ?>
         </div>
