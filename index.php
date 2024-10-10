@@ -1,17 +1,38 @@
 <?php include 'config.php'; ?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Quản lý cơ sở dữ liệu</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        // JavaScript để lọc danh sách các bảng dựa trên thanh tìm kiếm
+        function searchTable() {
+            let input = document.getElementById('tableSearch').value.toLowerCase();
+            let items = document.getElementsByClassName('table-item');
+
+            // Duyệt qua các phần tử trong danh sách và ẩn/hiện dựa trên nội dung tìm kiếm
+            for (let i = 0; i < items.length; i++) {
+                let item = items[i];
+                if (item.textContent.toLowerCase().indexOf(input) > -1) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <!-- Sidebar menu trái hiển thị danh sách các bảng -->
         <div class="sidebar">
             <h2>Danh sách bảng</h2>
+
+            <!-- Thanh tìm kiếm -->
+            <input type="text" id="tableSearch" onkeyup="searchTable()" placeholder="Tìm kiếm bảng..." class="search-box">
+
+            <!-- Danh sách các bảng -->
             <ul class="menu">
                 <?php
                 // Duyệt qua kết quả và hiển thị từng bảng trong danh sách menu
@@ -20,7 +41,7 @@
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_array()) {
                         $table_name = $row[0];
-                        echo "<li><a href='?table=$table_name'>" . $table_name . "</a></li>";
+                        echo "<li class='table-item'><a href='?table=$table_name'>" . $table_name . "</a></li>";
                     }
                 } else {
                     echo "<li>Không có bảng nào.</li>";
@@ -52,6 +73,7 @@
                     while ($field_info = $result_data->fetch_field()) {
                         echo "<th>" . $field_info->name . "</th>";
                     }
+                    echo "<th>Thao Tác</th>";
                     echo "</tr>";
 
                     // Hiển thị dữ liệu từng dòng
@@ -60,7 +82,13 @@
                         foreach ($row_data as $cell) {
                             echo "<td>" . htmlspecialchars($cell) . "</td>";
                         }
+                        echo "<td>";
+                            echo "<a href='add_edit.php?database=". $database ."&table=" .$selected_table ."&id=". $row_data['id'] ."'>Sửa</a>";
+                            echo "<a href='delete.php?database=" .$database . "&table=" .$selected_table ."&id=" . $row_data['id'] . " onclick='return confirm('Bạn có chắc muốn xóa?')'>Xóa</a>";
+                        echo "</td>";
+                        
                         echo "</tr>";
+
                     }
                     echo "</table>";
                 } else {
