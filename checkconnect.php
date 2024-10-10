@@ -1,9 +1,9 @@
 <?php
 // Thông tin kết nối cơ sở dữ liệu
 $host = 'localhost';  // Địa chỉ của database (localhost nếu cài đặt trên cùng máy)
-$dbname = 'asteriskcdrdb'; // Tên database Asterisk
-$username = 'root';   // Tên đăng nhập của MySQL
-$password = ''; // Mật khẩu của MySQL
+$dbname = 'asterisk'; // Tên database Asterisk
+$username = 'freepbxuser';   // Tên đăng nhập của MySQL
+$password = 'cxKOeL9Z4RWq'; // Mật khẩu của MySQL
 
 try {
     // Tạo kết nối PDO
