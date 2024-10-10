@@ -16,7 +16,7 @@ try {
     echo "Kết nối tới cơ sở dữ liệu thành công!";
     $sql = "SHOW TABLES FROM $dbname";
     $result = mysql_query($sql);
-    
+    echo($result);
     if (!$result) {
         echo "DB Error, could not list tables\n";
         echo 'MySQL Error: ' . mysql_error();
