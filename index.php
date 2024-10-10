@@ -1,4 +1,5 @@
 <?php include 'config.php'; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,9 +36,9 @@
             <!-- Danh sách các bảng -->
             <ul class="menu">
                 <?php
-                // Duyệt qua kết quả và hiển thị từng bảng trong danh sách menu
                 $sql = "SHOW TABLES";
                 $result = $conn->query($sql);
+                // Duyệt qua kết quả và hiển thị từng bảng trong danh sách menu
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_array()) {
                         $table_name = $row[0];
@@ -73,7 +74,6 @@
                     while ($field_info = $result_data->fetch_field()) {
                         echo "<th>" . $field_info->name . "</th>";
                     }
-                    echo "<th>Thao Tác</th>";
                     echo "</tr>";
 
                     // Hiển thị dữ liệu từng dòng
@@ -82,13 +82,7 @@
                         foreach ($row_data as $cell) {
                             echo "<td>" . htmlspecialchars($cell) . "</td>";
                         }
-                        echo "<td>";
-                            echo "<a href='add_edit.php?database=". $database ."&table=" .$selected_table ."&id=". $row_data['id'] ."'>Sửa</a>";
-                            echo "<a href='delete.php?database=" .$database . "&table=" .$selected_table ."&id=" . $row_data['id'] . " onclick='return confirm('Bạn có chắc muốn xóa?')'>Xóa</a>";
-                        echo "</td>";
-                        
                         echo "</tr>";
-
                     }
                     echo "</table>";
                 } else {
