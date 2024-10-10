@@ -12,26 +12,23 @@ try {
     // Thiết lập chế độ báo lỗi cho PDO
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Nếu kết nối thành công, in ra thông báo
-    
-    $sql = "SHOW TABLES FROM $dbname";
-    $result = mysql_query($sql);
-    echo($result);
-    if (!$result) {
-        echo "DB Error, could not list tables\n";
-        echo 'MySQL Error: ' . mysql_error();
-        exit;
-    }
-    
-    while ($row = mysql_fetch_row($result)) {
-        echo "Table: {$row[0]}\n";
+    // Truy vấn danh sách các bảng trong cơ sở dữ liệu
+    $stmt = $pdo->query("SHOW TABLES");
+
+    // Kiểm tra nếu có bảng nào trong cơ sở dữ liệu
+    if ($stmt->rowCount() > 0) {
+        echo "Danh sách các bảng trong cơ sở dữ liệu '$dbname':<br>";
+        
+        // Lấy và in danh sách các bảng
+        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+            echo $row[0] . "<br>";
+        }
+    } else {
+        echo "Không tìm thấy bảng nào trong cơ sở dữ liệu.";
     }
 
-    echo "Kết nối tới cơ sở dữ liệu thành công!";
-    
-    mysql_free_result($result);
 } catch (PDOException $e) {
-    // Nếu có lỗi, in ra lỗi
-    echo "Kết nối tới cơ sở dữ liệu thất bại: " . $e->getMessage();
+    // Nếu có lỗi kết nối, in ra lỗi
+    echo "Lỗi kết nối cơ sở dữ liệu: " . $e->getMessage();
 }
 ?>
