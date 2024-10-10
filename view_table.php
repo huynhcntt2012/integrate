@@ -1,9 +1,6 @@
 <?php
 // Thông tin kết nối cơ sở dữ liệu
-$host = 'localhost';  // Địa chỉ của database (localhost nếu cài đặt trên cùng máy)
-$dbname = 'asterisk'; // Tên database Asterisk
-$username = 'freepbxuser';   // Tên đăng nhập của MySQL
-$password = 'cxKOeL9Z4RWq'; // Mật khẩu của MySQL
+include 'config.php';
 
 // Lấy tên bảng từ tham số URL
 $table = isset($_GET['table']) ? $_GET['table'] : '';
