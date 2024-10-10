@@ -13,7 +13,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Nếu kết nối thành công, in ra thông báo
-    echo "Kết nối tới cơ sở dữ liệu thành công!";
+    
     $sql = "SHOW TABLES FROM $dbname";
     $result = mysql_query($sql);
     echo($result);
@@ -26,6 +26,8 @@ try {
     while ($row = mysql_fetch_row($result)) {
         echo "Table: {$row[0]}\n";
     }
+
+    echo "Kết nối tới cơ sở dữ liệu thành công!";
     
     mysql_free_result($result);
 } catch (PDOException $e) {
