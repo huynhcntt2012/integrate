@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Quản lý cơ sở dữ liệu</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
     <script>
         // JavaScript để lọc danh sách các bảng dựa trên thanh tìm kiếm
         function searchTable() {
@@ -53,6 +54,7 @@
 
         <!-- Nội dung chính hiển thị chi tiết dữ liệu của bảng -->
         <div class="content">
+            
             <h2>Chi tiết bảng</h2>
             <?php
             // Hiển thị nội dung chi tiết của bảng được chọn
@@ -62,7 +64,7 @@
                 // Truy vấn để lấy dữ liệu của bảng đã chọn
                 $sql_data = "SELECT * FROM $selected_table";
                 $result_data = $conn->query($sql_data);
-
+                echo "<button class='create-button' onclick=\"window.location.href='create.php?table=$selected_table'\">Tạo Mới</button>";
                 // Hiển thị tên bảng
                 echo "<h3>Bảng: " . $selected_table . "</h3>";
 
@@ -74,14 +76,19 @@
                     while ($field_info = $result_data->fetch_field()) {
                         echo "<th>" . $field_info->name . "</th>";
                     }
+                    echo "<th>Thao Tác</th>";
                     echo "</tr>";
-
+                    
                     // Hiển thị dữ liệu từng dòng
                     while ($row_data = $result_data->fetch_assoc()) {
                         echo "<tr>";
                         foreach ($row_data as $cell) {
                             echo "<td>" . htmlspecialchars($cell) . "</td>";
                         }
+                        echo "<td>";
+                            echo "<a class='edit-button' href='edit.php?database=". $database ."&table=" .$selected_table ."&id=". $row_data['id'] ."'>Sửa</a>";
+                            echo "<a class='delete-button' href='delete.php?database=". $database ."&table=" .$selected_table ."&id=". $row_data['id'] ."' onclick='return confirmDelete()'>Delete</a>";
+                        echo "</td>";
                         echo "</tr>";
                     }
                     echo "</table>";
