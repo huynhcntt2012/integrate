@@ -2,9 +2,9 @@
 // config.php: Chứa thông tin cấu hình kết nối MySQL
 
 $servername = "localhost";  // Địa chỉ máy chủ MySQL
-$username = 'freepbxuser';        // Tên đăng nhập MySQL
-$password = 'cxKOeL9Z4RWq';           // Mật khẩu MySQL
-$database = 'asterisk';  // Tên cơ sở dữ liệu
+$username = "root";         // Tên đăng nhập MySQL
+$password = "";             // Mật khẩu MySQL
+$database = "homestead";  // Tên cơ sở dữ liệu
 
 // Kết nối đến cơ sở dữ liệu
 $conn = new mysqli($servername, $username, $password, $database);

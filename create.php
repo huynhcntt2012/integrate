@@ -1,4 +1,4 @@
-<?php include 'config.php';
+<?php include 'config/config.php';
 
 // Lấy tên bảng từ URL
 $table_name = $_GET['table'];
