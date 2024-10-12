@@ -3,7 +3,7 @@
 
 $servername = "localhost";  // Địa chỉ máy chủ MySQL
 $username = "freepbxuser";         // Tên đăng nhập MySQL
-$password = "cxKOeL9Z4RWq";             // Mật khẩu MySQL
+$password = "";             // Mật khẩu MySQL
 $database = "asterisk";  // Tên cơ sở dữ liệu
 
 // Kết nối đến cơ sở dữ liệu
