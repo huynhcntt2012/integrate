@@ -19,7 +19,7 @@ switch ($request_method) {
         //require 'update.php';
         break;
     case 'DELETE':
-        //require 'delete.php';
+        require 'delete_user.php';
         break;
     default:
         http_response_code(405);
