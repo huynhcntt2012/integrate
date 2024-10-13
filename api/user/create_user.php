@@ -25,8 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->autocommit(false);
 
         // // Thêm user vào bảng 'users'
-        $sql_users = "INSERT INTO users (extension, password, name, voicemail, mohclass) 
-                      VALUES ('$extension', '$user_password', '$name', 'novm', 'default')";
+        $sql_users = "INSERT INTO users (extension, password, name, voicemail, ringtimer, mohclass) 
+                      VALUES ('$extension', '$user_password', '$name', 'novm', '0', 'default')";
                       
         if (!$conn->query($sql_users)) {
             throw new Exception("Error inserting into users: " . $conn->error);
@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Thêm thiết bị vào bảng 'devices'
         $sql_devices = "INSERT INTO devices (id, tech, dial, devicetype, user, description) 
-                        VALUES ('$extension', 'sip', 'SIP/$extension', 'fixed', '$extension', '$name')";
+                        VALUES ('$extension', 'pjsip', 'PJSIP/$extension', 'fixed', '$extension', '$name')";
         if (!$conn->query($sql_devices)) {
             throw new Exception("Error inserting into devices: " . $conn->error);
         }
