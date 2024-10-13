@@ -1,0 +1,69 @@
+1. Màn hình Splash (Splash Screen)
+    Mục đích: Giới thiệu logo hoặc tên ứng dụng khi người dùng khởi động app.
+    Chi tiết: Thường hiển thị trong vài giây để tải các dữ liệu khởi tạo ban đầu.
+2. Màn hình Đăng nhập/Đăng ký (Login/Sign-Up Screen)
+    Mục đích: Cho phép người dùng đăng ký hoặc đăng nhập vào ứng dụng.
+    Chi tiết:
+    Đăng nhập bằng số điện thoại: Người dùng nhập số điện thoại và nhận OTP để xác minh.
+    Đăng ký: Nếu chưa có tài khoản, người dùng sẽ cần đăng ký với các thông tin cơ bản.
+3. Màn hình Xác minh OTP (OTP Verification Screen)
+    Mục đích: Xác thực số điện thoại của người dùng bằng mã OTP.
+    Chi tiết: Màn hình nhập mã OTP đã gửi tới số điện thoại để xác minh.
+4. Màn hình Danh sách Liên hệ (Contacts List Screen)
+    Mục đích: Hiển thị danh sách các liên hệ của người dùng đã cài đặt ứng dụng để họ có thể bắt đầu chat.
+    Chi tiết:
+    Liên kết với danh bạ điện thoại của người dùng.
+    Hiển thị chỉ những liên hệ có đăng ký ứng dụng.
+5. Màn hình Danh sách Cuộc trò chuyện (Chats List Screen)
+    Mục đích: Hiển thị danh sách các cuộc trò chuyện gần đây.
+    Chi tiết: Bao gồm các thông tin như tên liên hệ, tin nhắn cuối cùng, thời gian gửi tin.
+6. Màn hình Trò chuyện (Chat Screen)
+    Mục đích: Nơi người dùng gửi và nhận tin nhắn văn bản, hình ảnh, video, và tệp tin.
+    Chi tiết:
+    Thanh nhập tin nhắn: Cho phép người dùng nhập và gửi tin nhắn.
+    Tin nhắn gửi/nhận: Hiển thị lịch sử hội thoại với giao diện bong bóng (chat bubble).
+    Đính kèm: Tính năng đính kèm hình ảnh, video, hoặc tài liệu.
+7. Màn hình Gọi điện thoại (Voice Call Screen)
+    Mục đích: Thực hiện và nhận cuộc gọi thoại giữa các người dùng.
+    Chi tiết:
+    Chế độ gọi đi: Hiển thị khi người dùng gọi điện đến người khác.
+    Chế độ gọi đến: Hiển thị thông tin khi có cuộc gọi đến và các tùy chọn "Trả lời" hoặc "Từ chối".
+8. Màn hình Gọi video (Video Call Screen)
+Chi tiết:
+    Xem camera của người khác: Hiển thị cả video của người dùng và người nhận cuộc gọi.
+    Điều khiển cuộc gọi: Các nút như tắt tiếng, chuyển camera, tắt video.
+9. Màn hình Thông báo Cuộc gọi đến (Incoming Call Screen)
+    Mục đích: Hiển thị khi có cuộc gọi thoại hoặc video đến.
+    Chi tiết: Cho phép người dùng chọn "Trả lời", "Từ chối" hoặc tắt chuông.
+10. Màn hình Hồ sơ người dùng (User Profile Screen)
+    Mục đích: Hiển thị và chỉnh sửa thông tin cá nhân của người dùng.
+    Chi tiết:
+    Ảnh đại diện: Cho phép thay đổi hình đại diện.
+    Tên hiển thị: Cho phép chỉnh sửa tên, trạng thái, và thông tin cá nhân.
+11. Màn hình Thiết lập Cài đặt (Settings Screen)
+    Mục đích: Quản lý các thiết lập và tùy chọn của ứng dụng.
+    Chi tiết:
+    Thông báo: Quản lý thông báo cuộc gọi và tin nhắn.
+    Quyền riêng tư: Cài đặt liên quan đến bảo mật và quyền riêng tư của người dùng.
+    Thay đổi số điện thoại: Cập nhật số điện thoại liên kết với tài khoản.
+12. Màn hình Thông báo (Notification Screen)
+    Mục đích: Hiển thị danh sách thông báo về tin nhắn mới, cuộc gọi nhỡ, yêu cầu kết bạn.
+    Chi tiết: Cung cấp danh sách các thông báo với tùy chọn đánh dấu đã đọc hoặc xóa.
+13. Màn hình Trạng thái/Story (Status/Story Screen)
+    Mục đích: Cho phép người dùng đăng trạng thái và xem trạng thái của người khác (tương tự như WhatsApp hay Viber).
+    Chi tiết: Hiển thị danh sách trạng thái của người dùng trong danh bạ.
+14. Màn hình Tìm kiếm (Search Screen)
+    Mục đích: Cho phép người dùng tìm kiếm các liên hệ hoặc cuộc trò chuyện.
+    Chi tiết: Hiển thị kết quả tìm kiếm từ danh sách liên hệ hoặc tin nhắn.
+15. Màn hình Tạo Nhóm Chat (Create Group Chat Screen)
+    Mục đích: Cho phép người dùng tạo một nhóm để nhắn tin với nhiều người cùng lúc.
+    Chi tiết: Người dùng chọn nhiều liên hệ từ danh sách để tạo nhóm, đặt tên và hình ảnh đại diện cho nhóm.
+16. Màn hình Thông tin Nhóm Chat (Group Info Screen)
+    Mục đích: Quản lý thông tin và cài đặt của nhóm chat.
+    Chi tiết: Hiển thị các thành viên trong nhóm, cho phép thêm hoặc xóa thành viên, thay đổi tên nhóm hoặc hình đại diện.
+17. Màn hình Xác nhận Hành động (Confirmation Screen)
+    Mục đích: Hiển thị thông báo xác nhận trước khi thực hiện các hành động quan trọng (xóa tin nhắn, rời nhóm, chặn người dùng).
+    Chi tiết: Hỏi người dùng xác nhận có muốn thực hiện hành động nào đó hay không.
+18. Màn hình Hỗ trợ và Liên hệ (Help and Support Screen)
+    Mục đích: Cung cấp thông tin hỗ trợ, liên hệ với bộ phận hỗ trợ hoặc đọc các câu hỏi thường gặp (FAQs).
+    Chi tiết: Thông tin liên hệ, hướng dẫn cơ bản, và câu trả lời cho các câu hỏi thường gặp.

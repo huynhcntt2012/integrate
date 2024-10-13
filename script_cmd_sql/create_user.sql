@@ -25,6 +25,17 @@ delete FROM `sip`;
 delete FROM `userman_users`;
 delete FROM `users`;
 
+sudo fwconsole ma delete firewall sysadmin
+cat /etc/freepbx.conf
 
-fwconsole userman --create-token --user=admin --password=fwa@865221
- The "--create-token" option does not exist.
+yum install prosody
+systemctl start prosody
+systemctl enable prosody
+
+nano /etc/prosody/prosody.cfg.lua
+
+
+VirtualHost "pbx.yourdomain.com"
+    enabled = true
+prosodyctl adduser youruser@pbx.yourdomain.com
+systemctl restart prosody
