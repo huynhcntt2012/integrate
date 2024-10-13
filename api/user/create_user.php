@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // // Thêm user vào bảng 'users'
         $sql_users = "INSERT INTO users (extension, password, name, voicemail, ringtimer, mohclass) 
-                      VALUES ('$extension', '$user_password', '$name', 'novm', '0', 'default')";
+                      VALUES ('$extension', '', '$name', 'novm', '0', 'default')";
                       
         if (!$conn->query($sql_users)) {
             throw new Exception("Error inserting into users: " . $conn->error);
