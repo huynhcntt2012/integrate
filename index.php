@@ -61,6 +61,16 @@
             if (isset($_GET['table'])) {
                 $selected_table = $_GET['table'];
 
+                // Truy vấn để tìm tên cột khóa chính (primary key)
+                $sqlkey = "SELECT COLUMN_NAME FROM information_schema.KEY_COLUMN_USAGE 
+                WHERE TABLE_SCHEMA = '$database' 
+                AND TABLE_NAME = '$selected_table' 
+                AND CONSTRAINT_NAME = 'PRIMARY'";
+
+                $resultkey = $conn->query($sqlkey);
+                $rowkey = $resultkey->fetch_assoc();
+                $primaryKey = $rowkey['COLUMN_NAME'];
+                
                 // Truy vấn để lấy dữ liệu của bảng đã chọn
                 $sql_data = "SELECT * FROM $selected_table";
                 $result_data = $conn->query($sql_data);
@@ -86,8 +96,8 @@
                             echo "<td>" . htmlspecialchars($cell) . "</td>";
                         }
                         echo "<td>";
-                            echo "<a class='edit-button' href='edit.php?database=". $database ."&table=" .$selected_table ."&id=". $row_data['id'] ."'>Sửa</a>";
-                            echo "<a class='delete-button' href='delete.php?database=". $database ."&table=" .$selected_table ."&id=". $row_data['id'] ."' onclick='return confirmDelete()'>Delete</a>";
+                            echo "<a class='edit-button' href='edit.php?database=". $database ."&table=" .$selected_table ."&".$primaryKey."=". $primaryKey ."'>Sửa</a>";
+                            echo "<a class='delete-button' href='delete.php?database=". $database ."&table=" .$selected_table ."&".$primaryKey."=". $primaryKey ."' onclick='return confirmDelete()'>Delete</a>";
                         echo "</td>";
                         echo "</tr>";
                     }
