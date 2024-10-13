@@ -24,3 +24,7 @@ delete FROM `devices`;
 delete FROM `sip`;
 delete FROM `userman_users`;
 delete FROM `users`;
+
+
+fwconsole userman --create-token --user=admin --password=fwa@865221
+ The "--create-token" option does not exist.

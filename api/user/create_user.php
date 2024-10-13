@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Nếu mọi thứ đều thành công, commit transaction
         $conn->commit();
         // Reload lại Asterisk để áp dụng cấu hình
-        shell_exec("asterisk -rx 'module show like sip'");
+        shell_exec("fwconsole reload");
         echo "Asterisk configuration reloaded successfully";
 
     } catch (Exception $e) {
