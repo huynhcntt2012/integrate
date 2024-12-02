@@ -28,6 +28,16 @@ delete FROM `users`;
 sudo fwconsole ma delete firewall sysadmin
 cat /etc/freepbx.conf
 
+$amp_conf['AMPDBUSER'] = 'freepbxuser';
+$amp_conf['AMPDBPASS'] = 'cb9fce788ee8e8405f942fb6d8fd6c49';
+$amp_conf['AMPDBHOST'] = 'localhost';
+$amp_conf['AMPDBNAME'] = 'asterisk';
+$amp_conf['AMPDBENGINE'] = 'mysql';
+$amp_conf['datasource'] = ''; //for sqlite3
+
+require_once('/var/www/html/admin/bootstrap.php');
+
+
 yum install prosody
 systemctl start prosody
 systemctl enable prosody
