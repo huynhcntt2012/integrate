@@ -78,7 +78,7 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
     <script>
         // Cấu hình Swagger UI
         const ui = SwaggerUIBundle({
-            url: "http://127.0.0.1:81/asterisk/api/swagger.json", // Đảm bảo đường dẫn đúng đến file swagger.json mới tạo
+            url: "http://127.0.0.1/integrate/api/swagger.json", // Đảm bảo đường dẫn đúng đến file swagger.json mới tạo
             dom_id: '#swagger-ui',
             presets: [
                 SwaggerUIBundle.presets.apis,
