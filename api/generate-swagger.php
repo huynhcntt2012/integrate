@@ -9,7 +9,7 @@ $swagger = [
     ],
     "servers" => [
         [
-            "url" => "http://127.0.0.1:81/integrate/api",
+            "url" => "http://127.0.0.1/integrate/api",
             "description" => "Local server"
         ]
     ],

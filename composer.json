@@ -2,5 +2,8 @@
     "require": {
         "firebase/php-jwt": "^6.10",
         "darkaonline/l5-swagger": "^8.6"
+    },
+    "require-dev": {
+        "laravel/sail": "^1.41"
     }
 }
